@@ -1,0 +1,13 @@
+/.idea
+/lib/*
+!/lib/Terminal.jar
+/out
+*.iml
+/web
+*.log
+/CLIENT/src/starter
+/SERVER/web
+/SERVER/src/test/passoffTests
+/SERVER/src/starter
+/SHARED/src/starter
+/SHARED/src/test
