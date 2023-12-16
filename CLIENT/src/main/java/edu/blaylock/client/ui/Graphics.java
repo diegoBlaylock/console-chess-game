@@ -65,7 +65,7 @@ public class Graphics {
     public void setAttributes(int... attributes) {
         if (attributes == null) return;
         String attributeString = Arrays.stream(attributes).mapToObj(String::valueOf).collect(Collectors.joining(";"));
-        Terminal.getInstance().out.print_flush(String.format("\u001b[%sm", attributeString));
+        Terminal.getInstance().out.printFlush(String.format("\u001b[%sm", attributeString));
     }
 
     /**
@@ -90,7 +90,7 @@ public class Graphics {
      * reset painting options
      */
     public void reset() {
-        Terminal.getInstance().out.print_flush("\u001b[0m");
+        Terminal.getInstance().out.printFlush("\u001b[0m");
     }
 
     /**
@@ -141,7 +141,7 @@ public class Graphics {
         setColumn(rect.x());
         for (int row = 0; row < rect.height(); row++) {
             setRow(rect.y() + row);
-            Terminal.getInstance().out.print_flush(" ".repeat(rect.width()));
+            Terminal.getInstance().out.printFlush(" ".repeat(rect.width()));
         }
     }
 
@@ -185,7 +185,7 @@ public class Graphics {
             setRow(y + i);
             if (print.length() > width())
                 print = print.substring(0, getRect().width());
-            Terminal.getInstance().out.print_flush(print);
+            Terminal.getInstance().out.printFlush(print);
         }
     }
 
@@ -203,12 +203,12 @@ public class Graphics {
     }
 
     private void setAbsolutePosition(int row, int column) {
-        Terminal.getInstance().out.print_flush(String.format("\u001b[%d;%dH", row + 1, column + 1));
+        Terminal.getInstance().out.printFlush(String.format("\u001b[%d;%dH", row + 1, column + 1));
         lastColumn = column;
     }
 
     private void setAbsoluteColumn(int column) {
-        Terminal.getInstance().out.print_flush(String.format("\u001b[%dG", column + 1));
+        Terminal.getInstance().out.printFlush(String.format("\u001b[%dG", column + 1));
         lastColumn = column;
     }
 

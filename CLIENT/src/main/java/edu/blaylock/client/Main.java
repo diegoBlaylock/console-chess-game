@@ -1,7 +1,6 @@
 package edu.blaylock.client;
 
 import edu.blaylock.client.facade.ServerFacade;
-import edu.blaylock.misc.ResourceManager;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -30,8 +29,6 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        // Load a custom c library for winapi for the Terminal.jar file
-        ResourceManager.loadDll("/terminal.dll");
         CLIENT.runClient();
     }
 

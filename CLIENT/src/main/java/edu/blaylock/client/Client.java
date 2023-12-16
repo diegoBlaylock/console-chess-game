@@ -99,8 +99,8 @@ public class Client {
         new_mode = ConsoleMode.unsetFlags(new_mode, ConsoleMode.ENABLE_ECHO_INPUT);
         Terminal.getInstance().in.setConsoleMode(new_mode);
         Terminal.getInstance().out.setConsoleMode(ConsoleMode.setFlags(Terminal.getInstance().out.getConsoleMode(), ConsoleMode.ENABLE_VIRTUAL_TERMINAL_PROCESSING));
-        Terminal.getInstance().out.print_flush("\u001b[?1049h");
-        Terminal.getInstance().out.print_flush("\u001b[?25l");
+        Terminal.getInstance().out.printFlush("\u001b[?1049h");
+        Terminal.getInstance().out.printFlush("\u001b[?25l");
         Terminal.dispatcher.addListener(Record.KEY_EVENT, helpListener);
     }
 
@@ -110,9 +110,9 @@ public class Client {
     void onShutdown() {
         System.out.flush();
         Terminal.getInstance().out.flush();
-        Terminal.getInstance().out.print_flush("\u001b[?1049l");
-        Terminal.getInstance().out.print_flush("\u001b[?25h");
-        Terminal.getInstance().out.print_flush("\u001b[0m");
+        Terminal.getInstance().out.printFlush("\u001b[?1049l");
+        Terminal.getInstance().out.printFlush("\u001b[?25h");
+        Terminal.getInstance().out.printFlush("\u001b[0m");
         Terminal.resetModes();
         if (exitException != null) {
             exitException.printStackTrace();

@@ -35,8 +35,8 @@ public class TextField extends Component {
     @Override
     public void setFocus(boolean focus) {
         super.setFocus(focus);
-        if (focus) Terminal.getInstance().out.print_flush("\u001b[?25h");
-        else Terminal.getInstance().out.print_flush("\u001b[?25l");
+        if (focus) Terminal.getInstance().out.printFlush("\u001b[?25h");
+        else Terminal.getInstance().out.printFlush("\u001b[?25l");
     }
 
     @Override

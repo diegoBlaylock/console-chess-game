@@ -102,7 +102,7 @@ public class PaneManager {
     }
 
     private static void resetRender(Graphics graphics) {
-        Terminal.getInstance().out.print_flush("\u001b[2J");
+        Terminal.getInstance().out.printFlush("\u001b[2J");
         Component component = componentStack.peek();
         graphics.pushRect(component.getRect());
         component.paint(graphics);
