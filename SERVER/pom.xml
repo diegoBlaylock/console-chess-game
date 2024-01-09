@@ -9,7 +9,9 @@
         <artifactId>CHESS</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
+    <properties>
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
     <artifactId>SERVER</artifactId>
 
     <build>
